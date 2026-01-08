@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Library/">
+    <Project Path="BusinessLogicLayer/BusinessLogicLayer.csproj" />
+    <Project Path="DataAccessLayer/DataAccessLayer.csproj" />
+    <Project Path="LibraryConsoleUI/LibraryConsoleUI.csproj" />
+  </Folder>
+</Solution>
