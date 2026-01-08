@@ -16,21 +16,21 @@ namespace LibraryConsoleUI
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             
 
-            // Yol göstər
+            
             string dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
             Console.WriteLine($"📁 Məlumatlar buraya saxlanılacaq: {dataPath}\n");
 
-            // Load data from files
+            
             DataBase.Books = FileStorage.LoadBooks("books.txt");
             DataBase.Categories = FileStorage.LoadCategories("categories.txt");
             DataBase.Members = FileStorage.LoadMembers("members.txt");
 
             Console.WriteLine("🔷 Kitabxana İdarəetmə Sisteminə Xoş Gəlmisiniz! 🔷\n");
 
-            // Main Menu
+            
             ShowMainMenu();
 
-            // Proqram bitəndə avtomatik saxla
+            
             Console.WriteLine("\n💾 Məlumatlar avtomatik saxlanılır...");
             SaveData();
             Console.WriteLine("✅ Saxlanıldı!");
@@ -39,16 +39,17 @@ namespace LibraryConsoleUI
         {
             while (true)
             {
+                VoiceManagement.Menu();
                 Console.Clear();
                 Console.WriteLine("╔═══════════════════════════════════════════════════╗");
                 Console.WriteLine("║  ƏSAS MENYU                                       ║");
                 Console.WriteLine("╚═══════════════════════════════════════════════════╝\n");
 
-                Console.WriteLine("1️  Kitab İdarəetməsi");
-                Console.WriteLine("2️  Kateqoriya İdarəetməsi");
-                Console.WriteLine("3️  Üzv İdarəetməsi");
-                Console.WriteLine("4️  Məlumatları Saxla və Çıx");
-                Console.WriteLine("0️  Çıxış");
+                Console.WriteLine("1️📚  Kitab İdarəetməsi");
+                Console.WriteLine("2️📁  Kateqoriya İdarəetməsi");
+                Console.WriteLine("3️👥  Üzv İdarəetməsi");
+                Console.WriteLine("4️🚪  Məlumatları Saxla və Çıx");
+                Console.WriteLine("0️🚪  Çıxış");
 
                 Console.Write("\n👉 Seçim edin: ");
                 
@@ -113,18 +114,19 @@ namespace LibraryConsoleUI
         {
             while (true)
             {
+                VoiceManagement.Menu();
                 Console.Clear();
                 PrintHeader("KİTAB İDARƏETMƏSİ");
 
-                Console.WriteLine("1️  Yeni Kitab Əlavə Et");
-                Console.WriteLine("2️  Bütün Kitabları Göstər");
-                Console.WriteLine("3️  Kitab Axtar");
-                Console.WriteLine("4️  Kitab Yenilə");
-                Console.WriteLine("5️  Kitab Sil");
-                Console.WriteLine("0️  Geri");
+                Console.WriteLine("1️➕ Yeni Kitab Əlavə Et");
+                Console.WriteLine("2️📋 Bütün Kitabları Göstər");
+                Console.WriteLine("3️🔍 Kitab Axtar");
+                Console.WriteLine("4️✏️ Kitab Yenilə");
+                Console.WriteLine("5️🗑️ Kitab Sil");
+                Console.WriteLine("0️⬅️ Geri");
 
                 Console.Write("\n👉 Seçim: ");
-                VoiceManagement.Menu();
+                
                 string choice = Console.ReadLine() ?? "";
 
                 try
@@ -360,15 +362,16 @@ namespace LibraryConsoleUI
         {
             while (true)
             {
+                VoiceManagement.Menu();
                 Console.Clear();
                 PrintHeader("KATEQORİYA İDARƏETMƏSİ");
 
-                Console.WriteLine("1️  Yeni Kateqoriya Əlavə Et");
-                Console.WriteLine("2️  Bütün Kateqoriyaları Göstər");
-                Console.WriteLine("3️  Kateqoriya Axtar");
-                Console.WriteLine("4️  Kateqoriya Yenilə");
-                Console.WriteLine("5️  Kateqoriya Sil");
-                Console.WriteLine("0️  Geri");
+                Console.WriteLine("1️➕ Yeni Kateqoriya Əlavə Et");
+                Console.WriteLine("2 📋 Bütün Kateqoriyaları Göstər");
+                Console.WriteLine("3️🔍 Kateqoriya Axtar");
+                Console.WriteLine("4️✏️ Kateqoriya Yenilə");
+                Console.WriteLine("5️🗑️ Kateqoriya Sil");
+                Console.WriteLine("0️⬅️ Geri");
 
                 Console.Write("\n👉 Seçim: ");
                 string choice = Console.ReadLine() ?? "";
@@ -546,16 +549,16 @@ namespace LibraryConsoleUI
         {
             while (true)
             {
+                VoiceManagement.Menu();
                 Console.Clear();
                 PrintHeader("ÜZV İDARƏETMƏSİ");
 
-                Console.WriteLine("1️  Yeni Üzv Əlavə Et");
-                Console.WriteLine("2️  Bütün Üzvləri Göstər");
-                Console.WriteLine("3️  Üzv Axtar");
-                Console.WriteLine("4️  Üzv Yenilə");
-                Console.WriteLine("5️  Üzv Sil");
-                Console.WriteLine("0️  Geri");
-
+                Console.WriteLine("1️➕  Yeni Üzv Əlavə Et");
+                Console.WriteLine("2️📋  Bütün Üzvləri Göstər");
+                Console.WriteLine("3️🔍  Üzv Axtar");
+                Console.WriteLine("4️✏️  Üzv Yenilə");
+                Console.WriteLine("5️🗑️  Üzv Sil");
+                Console.WriteLine("0️⬅️  Geri");
                 Console.Write("\n👉 Seçim: ");
                 string choice = Console.ReadLine() ?? "";
 
